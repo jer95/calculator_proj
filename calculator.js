@@ -23,3 +23,17 @@ let operandB;
 function operate(operandA,operator,operandB){
    return operator(operandA,operandB)
 }
+
+const numBtn = document.querySelectorAll('.digits');
+const opBtn = document.querySelectorAll('.operators');
+const equalBtn = document.querySelectorAll('.equals');
+const clearBtn = document.querySelectorAll('#clear');
+const calcDisplay = document.querySelector('.calc-display');
+
+let displayValue = '';
+numBtn.forEach((digit) => digit.addEventListener('click', () => {
+    displayValue += digit.textContent
+    calcDisplay.textContent = displayValue
+}))
+
+
