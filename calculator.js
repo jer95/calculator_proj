@@ -17,16 +17,19 @@ function divide(a,b){
 }
 
 let operandA;
-let operator;
+let operatorClicked;
 let operandB;
 
-function operate(operandA,operator,operandB){
-   return operator(operandA,operandB)
+const operatorFunctions = {
+    add,
+    subtract,
+    multiply,
+    divide
 }
 
 const numBtn = document.querySelectorAll('.digits');
 const opBtn = document.querySelectorAll('.operators');
-const equalBtn = document.querySelectorAll('.equals');
+const equalBtn = document.querySelector('#operate');
 const clearBtn = document.querySelectorAll('#clear');
 const calcDisplay = document.querySelector('.calc-display');
 
@@ -35,5 +38,4 @@ numBtn.forEach((digit) => digit.addEventListener('click', () => {
     displayValue += digit.textContent
     calcDisplay.textContent = displayValue
 }))
-
 
