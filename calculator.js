@@ -39,3 +39,8 @@ numBtn.forEach((digit) => digit.addEventListener('click', () => {
     calcDisplay.textContent = displayValue
 }))
 
+opBtn.forEach((operator) => operator.addEventListener('click', (event) => {
+    operandA = +displayValue;
+    operatorClicked = event.target.value
+    displayValue = ""
+}))
