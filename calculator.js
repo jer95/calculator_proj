@@ -20,6 +20,7 @@ let operandA;
 let operatorClicked;
 let operandB;
 
+
 const operatorFunctions = {
     add,
     subtract,
@@ -34,7 +35,13 @@ const clearBtn = document.querySelectorAll('#clear');
 const calcDisplay = document.querySelector('.calc-display');
 
 let displayValue = '';
+let isNewCalculation = true;
+
 numBtn.forEach((digit) => digit.addEventListener('click', () => {
+    if(isNewCalculation){
+        displayValue = ''
+        isNewCalculation = false;
+    }
     displayValue += digit.textContent
     calcDisplay.textContent = displayValue
 }))
@@ -44,3 +51,11 @@ opBtn.forEach((operator) => operator.addEventListener('click', (event) => {
     operatorClicked = event.target.value
     displayValue = ""
 }))
+
+equalBtn.addEventListener('click',() => {
+    operandB = +displayValue;
+    const result = operatorFunctions[operatorClicked](operandA,operandB)
+    displayValue = result;
+    calcDisplay.textContent = displayValue;
+    isNewCalculation = true;
+})
