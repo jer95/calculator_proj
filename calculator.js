@@ -31,7 +31,7 @@ const operatorFunctions = {
 const numBtn = document.querySelectorAll('.digits');
 const opBtn = document.querySelectorAll('.operators');
 const equalBtn = document.querySelector('#operate');
-const clearBtn = document.querySelectorAll('#clear');
+const clearBtn = document.querySelector('#clear');
 const calcDisplay = document.querySelector('.calc-display');
 
 let displayValue = '';
@@ -55,7 +55,16 @@ opBtn.forEach((operator) => operator.addEventListener('click', (event) => {
 equalBtn.addEventListener('click',() => {
     operandB = +displayValue;
     const result = operatorFunctions[operatorClicked](operandA,operandB)
+    if(operatorClicked == "divide" && operandB == 0){
+        calcDisplay.textContent = "Not a number"
+    } else{
     displayValue = result;
     calcDisplay.textContent = displayValue;
     isNewCalculation = true;
+}
+})
+
+clearBtn.addEventListener('click', () => {
+    displayValue = ""
+    calcDisplay.textContent = displayValue;
 })
