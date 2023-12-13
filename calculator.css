@@ -51,7 +51,7 @@ button{
     flex: 1 0 25%;
     height: 65px;
     background-color: black;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
     border: 2px solid goldenrod;
     border-radius: 5px
@@ -63,3 +63,30 @@ button{
     gap: 5px;
     height: 36px;
 }
+
+#clear{
+    color: red;
+}
+
+#add{
+    color: blue;
+}
+
+#subtract{
+    color: pink;
+}
+
+#multiply{
+    color: purple;
+}
+
+#divide{
+    color: yellow;
+}
+
+#operate{
+    color: green;
+}
+
+
+
