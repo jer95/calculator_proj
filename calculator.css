@@ -10,7 +10,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 15px;
+    padding: 12px;
     background-color: black;
     border: 6px goldenrod solid;
     border-radius: 10px;
@@ -23,13 +23,28 @@ body{
     gap: 8px;
 }
 
-.calc-display{
-    height: 75px;
+.calc-container{
+    display: flex;
+    flex-direction: column-reverse;
     border: 2px solid grey;
     font-size: 24px;
-    padding: 5px;
+    padding-right: 8px;
+    padding-bottom: 8px;
     font-size: 24px;
     background-color: gray;
+}
+
+.calculation{
+    height: auto;
+    width: auto;
+    font-size: 24px;
+    margin: 0;
+}
+
+.calc-display{
+    width: auto;
+    font-size: 34px;
+    margin: 0
 }
 
 button{
@@ -40,4 +55,11 @@ button{
     color: white;
     border: 2px solid goldenrod;
     border-radius: 5px
+}
+
+.flex{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    height: 36px;
 }
