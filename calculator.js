@@ -54,14 +54,14 @@
             isNewCalculation = false;
         }
         displayValue += digit.textContent;
-        calculation.textContent += ` ${digit.textContent}`;
+        calculation.textContent += `${digit.textContent}`;
         calcDisplay.textContent = displayValue;
     }))
 
     opBtn.forEach((operator) => operator.addEventListener('click', (event) => {
         operandA = +displayValue;
         operatorClicked = event.target.value
-        calculation.textContent+= ` ${operatorSymbols[operatorClicked]}`
+        calculation.textContent+= ` ${operatorSymbols[operatorClicked]} `
         displayValue = ""
     }))
 
